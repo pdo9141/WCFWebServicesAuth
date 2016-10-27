@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapHeaderAuth", "SoapHeaderAuth\SoapHeaderAuth.csproj", "{9DB3E0AD-3CA6-432E-97E3-694FE36FB039}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapHeaderAuthClient", "SoapHeaderAuthClient\SoapHeaderAuthClient.csproj", "{6EA0C67D-ECA5-4242-9424-135311D8554E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DB3E0AD-3CA6-432E-97E3-694FE36FB039} = {9DB3E0AD-3CA6-432E-97E3-694FE36FB039}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfAuth", "WcfAuth\WcfAuth.csproj", "{FF4FE051-D260-427C-AA7D-A914481E1F7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfAuthClient", "WcfAuthClient\WcfAuthClient.csproj", "{03FAAC62-9350-445E-95D9-2A8F9FDD8F13}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF4FE051-D260-427C-AA7D-A914481E1F7D} = {FF4FE051-D260-427C-AA7D-A914481E1F7D}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{5EBF17C0-3EC0-4365-BC42-0340F7C89582}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DB3E0AD-3CA6-432E-97E3-694FE36FB039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DB3E0AD-3CA6-432E-97E3-694FE36FB039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DB3E0AD-3CA6-432E-97E3-694FE36FB039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DB3E0AD-3CA6-432E-97E3-694FE36FB039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EA0C67D-ECA5-4242-9424-135311D8554E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA0C67D-ECA5-4242-9424-135311D8554E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA0C67D-ECA5-4242-9424-135311D8554E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA0C67D-ECA5-4242-9424-135311D8554E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF4FE051-D260-427C-AA7D-A914481E1F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4FE051-D260-427C-AA7D-A914481E1F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4FE051-D260-427C-AA7D-A914481E1F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4FE051-D260-427C-AA7D-A914481E1F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FAAC62-9350-445E-95D9-2A8F9FDD8F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FAAC62-9350-445E-95D9-2A8F9FDD8F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FAAC62-9350-445E-95D9-2A8F9FDD8F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FAAC62-9350-445E-95D9-2A8F9FDD8F13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

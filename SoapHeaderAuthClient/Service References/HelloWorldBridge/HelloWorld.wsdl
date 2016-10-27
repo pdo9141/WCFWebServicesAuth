@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AuthTest">
+        <s:complexType />
+      </s:element>
+      <s:element name="AuthTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthSoapHd" type="tns:AuthSoapHd" />
+      <s:complexType name="AuthSoapHd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthTestSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthTest" />
+  </wsdl:message>
+  <wsdl:message name="AuthTestSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthTestAuthSoapHd">
+    <wsdl:part name="AuthSoapHd" element="tns:AuthSoapHd" />
+  </wsdl:message>
+  <wsdl:portType name="HelloWorldSoap">
+    <wsdl:operation name="AuthTest">
+      <wsdl:input message="tns:AuthTestSoapIn" />
+      <wsdl:output message="tns:AuthTestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloWorldSoap" type="tns:HelloWorldSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AuthTest">
+      <soap:operation soapAction="http://tempuri.org/AuthTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AuthTestAuthSoapHd" part="AuthSoapHd" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HelloWorldSoap12" type="tns:HelloWorldSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AuthTest">
+      <soap12:operation soapAction="http://tempuri.org/AuthTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AuthTestAuthSoapHd" part="AuthSoapHd" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloWorld">
+    <wsdl:port name="HelloWorldSoap" binding="tns:HelloWorldSoap">
+      <soap:address location="http://localhost:17692/HelloWorld.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HelloWorldSoap12" binding="tns:HelloWorldSoap12">
+      <soap12:address location="http://localhost:17692/HelloWorld.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
